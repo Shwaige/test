@@ -8,7 +8,7 @@ headers = {
 
 repones = requests.get(url=url, headers=headers)
 
-# print(str(repones.text))
+print(str(repones.text))
 
 
 html_data = re.findall('<li><a href="/song\?id=(\d+)">(.*?)</a>', str(repones.text))
@@ -20,5 +20,4 @@ for num_id, title in html_data:
     with open("O:\music\\" + title + ".mp3", mode="wb") as f:
         f.write(music_content)
 print(num_id, title)
-
 # http://music.163.com/song/media/outer/url?id=1974443814
