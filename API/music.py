@@ -14,10 +14,10 @@ print(str(repones.text))
 html_data = re.findall('<li><a href="/song\?id=(\d+)">(.*?)</a>', str(repones.text))
 print(html_data)
 
-for num_id, title in html_data:
-    music_url = f'http://music.163.com/song/media/outer/url?id={num_id}.mp3'
-    music_content = requests.get(url=music_url, headers=headers).content
-    with open("O:\music\\" + title + ".mp3", mode="wb") as f:
-        f.write(music_content)
-print(num_id, title)
-# http://music.163.com/song/media/outer/url?id=1974443814
+# for num_id, title in html_data:
+#     music_url = f'http://music.163.com/song/media/outer/url?id={num_id}.mp3'
+#     music_content = requests.get(url=music_url, headers=headers).content
+#     with open("O:\music\\" + title + ".mp3", mode="wb") as f:
+#         f.write(music_content)
+# print(num_id, title)
+# # http://music.163.com/song/media/outer/url?id=1974443814
